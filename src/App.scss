@@ -2,8 +2,18 @@
 
 
 body{
-    background-color: #dcc7be;
+    background: #ffe1e1 ;
 }
 .main{
+    position: absolute;
+    
     width: 100%;
+    
+}
+
+.contenido-principal
+{
+
+    margin: 0 auto;
+    max-width: 80%;
 }

@@ -308,17 +308,105 @@ template {
   display: none;
 }
 
+.formulario {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+fieldset {
+  border: 0;
+}
+
+.formulario {
+  max-width: 50%;
+  border: 1px solid gray;
+}
+.formulario label {
+  color: black;
+  width: 100%;
+  font-size: 14px;
+}
+
+input {
+  height: 56px;
+  font-size: 16px;
+  border: 1px solid black;
+  width: 100%;
+  background: white;
+  margin: 8px auto;
+}
+input:focus {
+  border-color: #ff5757;
+}
+input:first-of-type {
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+input[type=button] {
+  margin: 24px auto;
+}
+input[type=button]:hover {
+  cursor: pointer;
+}
+
+.btn-consulta {
+  background: #6bb5ff;
+  border: none;
+}
+
 .navegacion-principal {
   width: 100%;
-  height: 2rem;
-  background-color: #6837da;
+  height: 4rem;
+  background: #FF6B6B;
   height: auto;
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  gap: 1rem;
+}
+.navegacion-principal a {
+  color: white;
+}
+.navegacion-principal a:last-child {
+  padding-right: 1rem;
+}
+.navegacion-principal .nombre-pagina {
+  display: flex;
+  flex-grow: 2;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.navegacion__principal {
+  display: flex;
+  gap: 1rem;
+}
+
+input:focus {
+  outline: none;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FF6B6B;
+  min-height: 4rem;
 }
 
 body {
-  background-color: #dcc7be;
+  background: #ffe1e1;
 }
 
 .main {
+  position: absolute;
   width: 100%;
+}
+
+.contenido-principal {
+  margin: 0 auto;
+  max-width: 80%;
 }/*# sourceMappingURL=App.css.map */

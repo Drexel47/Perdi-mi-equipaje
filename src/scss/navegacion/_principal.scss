@@ -4,7 +4,36 @@
 
 .navegacion-principal{
     width: 100%;
-    height: 2rem;
-    background-color: v.$color_principal;
+    height: 4rem;
+    background: v.$color_principal;
     height: auto;
+
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    gap: 1rem;
+    a{
+     
+        color: white;
+
+        &:last-child{
+            padding-right: 1rem;
+        }
+    }
+
+    .nombre-pagina{
+        display: flex;
+        flex-grow: 2;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
 }
+
+.navegacion__principal
+{
+    display: flex;
+    gap: 1rem;
+}
+
+
