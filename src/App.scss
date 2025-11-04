@@ -1,19 +1,63 @@
 @forward 'scss/index';
+@use 'scss/base/variables' as v;
 
+#root{
+  display: grid;
+  min-height: 100dvh;
+  grid-auto-flow: auto 1fr auto;
+}
 
 body{
-    background: #ffe1e1 ;
+    //background: v.$color_bg;//#ffe1e1 ;
+    
+    min-height: 100dvh;
+    font-family: "Raleway", sans-serif;
+    transition: background-color 0.4s ease;
 }
 .main{
-    position: absolute;
-    
     width: 100%;
+}
+header{
+    
     
 }
-
+.contenedor{
+    width: 100%;
+}
 .contenido-principal
 {
 
     margin: 0 auto;
     max-width: 80%;
+}
+
+input:focus {
+  outline: none;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: v.$color_principal;
+    min-height: 4rem;
+    font-size: 1.8rem;
+}
+
+.banner-img{
+  width: 100%;
+
+  object-fit: contain;
+  max-height: 360px;
+}
+
+.contacto{
+    display: flex;
+    flex-direction: column;
+    h3{
+        background: v.$color_principal;
+        width: 20rem;
+
+        height: 4rem;
+    }
 }

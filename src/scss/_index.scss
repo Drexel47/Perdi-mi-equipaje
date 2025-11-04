@@ -2,16 +2,7 @@
 @forward 'base';
 @forward 'navegacion';
 
-@use 'base/variables' as v;
-input:focus {
-  outline: none;
-}
 
-footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: v.$color_principal;
-    min-height: 4rem;
-}
+
+
 

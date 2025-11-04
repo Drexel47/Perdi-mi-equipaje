@@ -6,7 +6,7 @@
     margin: 0 auto;
 }
 fieldset{
-    border: 0;
+    border:0;
 }
 .formulario{
     max-width: 50%;
@@ -55,5 +55,16 @@ input
 .btn-consulta{
     background: #6bb5ff;
     border: none;
+    transition: background 0.4s ease;
+    &:hover{
+        
+        background: #52a8ff;
+    }
+}
 
+input[type=button]{
+    transition: font-weight 0.4s ease;
+    &:hover{
+        font-weight: bold;
+    }
 }

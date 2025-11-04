@@ -1,13 +1,26 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css';
-
+import sunIcon from '../public/img/icons/sun.svg'
+import moonIcon from '../public/img/icons/moon.svg'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [modoOscuro, setModoOscuro] = useState(false);
 
+  useEffect(() => {
+    const saved = localStorage.getItem("modoOscuro") === "true";
+    setModoOscuro(saved);
+  }, []);
+
+  useEffect(()=>{
+
+    
+    document.body.classList.toggle("modo-oscuro", modoOscuro);
+    localStorage.setItem("modoOscuro", modoOscuro);
+    
+  }, [modoOscuro]);
   return (
     <>
       <div className="main">
@@ -21,20 +34,29 @@ function App() {
               <a href="">Registrate</a>
 
             </div>
-            
+            <button className='set-modo-oscuro' onClick={()=>setModoOscuro((prev)=> !prev)}>
+              <img 
+              src={modoOscuro ? sunIcon : moonIcon}
+              alt={modoOscuro ? "Modo claro" : "Modo oscuro"}
+              className="icon">
+
+              </img>
+              
+            </button>
             
             
           </nav>
         </header>
         <main className="contenido-principal">
           <div className="contenedor">
-            <section className="banner">
-  
+            <div className="banner">
+              <img className='banner-img' src='./public/img/banner.png'></img>
               <div className="banner-desc">
+                
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non consequuntur obcaecati doloribus commodi dolor qui facilis harum autem. Sit amet deleniti quos assumenda velit adipisci impedit. Praesentium dolor saepe delectus?</p>
               </div>
 
-            </section>
+            </div>
             <section className="contacto">
               <h3 className="subtitulo">Tienes Dudas? Contactanos</h3>
                 <form className='formulario'>
