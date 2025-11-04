@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css';
-import sunIcon from '../public/img/icons/sun.svg'
-import moonIcon from '../public/img/icons/moon.svg'
+import sunIcon from './assets/icons/sun.svg'
+import moonIcon from './assets/icons/moon.svg'
+import banner from './assets/banner.png'
 
 
 function App() {
@@ -50,7 +51,7 @@ function App() {
         <main className="contenido-principal">
           <div className="contenedor">
             <div className="banner">
-              <img className='banner-img' src='./public/img/banner.png'></img>
+              <img className='banner-img' src={banner}></img>
               <div className="banner-desc">
                 
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non consequuntur obcaecati doloribus commodi dolor qui facilis harum autem. Sit amet deleniti quos assumenda velit adipisci impedit. Praesentium dolor saepe delectus?</p>
