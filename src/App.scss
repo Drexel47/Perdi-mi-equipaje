@@ -1,6 +1,17 @@
 @forward 'scss/index';
 @use 'scss/base/variables' as v;
 
+$transicion: 0.3 ease;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+html{
+    font-size: 62.5%;
+}
 #root{
   display: grid;
   min-height: 100dvh;
@@ -9,55 +20,313 @@
 
 body{
     //background: v.$color_bg;//#ffe1e1 ;
-    
     min-height: 100dvh;
     font-family: "Raleway", sans-serif;
     transition: background-color 0.4s ease;
+
+    &.modo-oscuro{
+
+        &.card{
+            background: #181818;
+        }
+
+        &.seccion
+        {
+            &.info-legal
+            {
+                background: #161616;
+            }
+        }
+
+        &.legal-list{
+
+            li{
+                background: #222;
+            }
+        }
+    }
 }
 .main{
     width: 100%;
 }
-header{
-    
-    
+
+a{
+    text-decoration: none;
+
+    transition: color $transicion;
+
+    &:hover{
+       color: v.$color_principal; 
+    }
 }
+
 .contenedor{
-    width: 100%;
+    width: min(120rem, 90%);
+    margin: 0 auto;
 }
 .contenido-principal
 {
 
     margin: 0 auto;
-    max-width: 80%;
+    //max-width: 80%;
 }
 
 input:focus {
   outline: none;
 }
 
-footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.footer{
+    text-align: center;
+    padding: 1.2rem;
+    margin-top: 3rem;
+
     background: v.$color_principal;
-    min-height: 4rem;
-    font-size: 1.8rem;
+    color: v.$color-fondo-contraste;
+    font-size: .95rem;
+    
 }
-
-.banner-img{
-  width: 100%;
-
-  object-fit: contain;
-  max-height: 360px;
-}
-
-.contacto{
-    display: flex;
-    flex-direction: column;
-    h3{
-        background: v.$color_principal;
-        width: 20rem;
-
-        height: 4rem;
+section{
+    .subtitulo
+    {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        color: v.$color_principal;
     }
 }
+
+
+
+details{
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+/*---Secciones---*/
+.nota{
+    text-align: center;
+    margin: 2rem 0;
+}
+//Como funciona
+.section
+{
+    &.como-funciona
+    {
+        padding: 4rem 0;
+
+        
+        
+    }
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    width: min(120rem, 90%);
+    margin: auto;
+
+}
+.card
+{
+    background: v.$color-fondo-contraste;
+    padding: 2rem;
+    border-radius: v.$borde-radio;
+    box-shadow: 0 4px 14px rgb(0 0 0 / 10%);
+    transition: 
+    transform v.$transicion1,
+    background v.$transicion1,
+    box-shadow v.$transicion1;
+
+    &:hover{
+        transform: translateY(-6px);
+        box-shadow: 0 10px 25px rgb(0 0 0 / 15%);
+
+    }
+
+
+    h4{
+        margin-bottom: .75rem;
+        font-size: 1.4rem;
+        color: v.$color-texto;
+    }
+
+    p{
+        color: v.$color-texto-suave;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+
+/*---Información Legal--*/
+
+.seccion{
+
+    &.info-legal{
+        padding: 4rem 0;
+        background: v.$color-fondo-contraste;
+
+        transition: background v.$transicion1;
+    }
+}
+
+.legal-list{
+    list-style: none;
+    width: min(90rem, 90%);
+
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    li{
+        background: v.$color-fondo;
+        padding: 1.5rem;
+        border-radius: v.$borde-radio;
+        box-shadow: 0 4px 12px rgb(0 0 0 / 8%);
+        line-height: 1.6;
+        font-size: 1.1rem;
+        color: #000;
+        transition: 
+            background v.$transicion1,
+            box-shadow v.$transicion1,
+            transform v.$transicion1;
+
+        &:hover{
+            transform: translateX(8px);
+            box-shadow: 0 8px 20px rgb(0 0 0 / 15%);
+        }
+    }
+
+    strong{
+        color: #000;
+    }
+}
+
+
+/*---FAQ---*/
+
+.faq-item {
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border-color, #e3e3e3);
+  padding: 1.2rem 1.4rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: border-color 0.25s ease, background 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-header h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  color: var(--accent-color, #7aa8ff);
+  transition: transform 0.3s ease;
+}
+
+.faq-item:hover {
+  border-color: var(--accent-color, #7aa8ff);
+}
+
+.faq-content {
+  overflow: hidden;
+  padding-top: 0.8rem;
+}
+
+.faq-content p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--text-secondary, #555);
+}
+
+/*
+.faq{
+    padding: 3rem 1rem;
+    max-width: 90rem;
+    margin: 0 auto;
+    color: #000;
+    details
+    {
+        background-color: #ffffff;
+        border: 1px solid #e6e6e6;
+
+        border-radius: 1.2rem;
+        padding: 1rem 1.2rem;
+        margin-bottom: 1rem;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+
+        transition: background v.$transicion1, border-color v.$transicion1;
+    
+        &:hover{
+            border-color: #7aa8ff;
+        }
+
+        
+
+        & > *{
+            transition: opacity v.$transicion1;
+
+        }
+    }
+
+    &.summary{
+        font-weight: 600;
+        font-size: 1.2rem;
+        list-style: none;
+        position: relative;
+        padding-right: 2.5rem;
+
+        &::after{
+            content: "+";
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 1.3rem;
+            transition: transform v.$transicion1, color v.$transicion1;
+            color:  #7aa8ff;
+        }
+
+    }
+}
+
+
+details[open] ::details-content
+        {
+            background: #fafcff;
+            border-color: #7aa8ff;
+            &summary::after{
+                content: "-";
+                transform: rotate(180deg);
+            }
+        }
+body.dark-mode .faq details {
+  background: #1b1e24;
+  border-color: #2a2d34;
+  color: #e8e8e8;
+}
+
+body.dark-mode .faq details:hover {
+  border-color: var(--accent-color, #7aa8ff);
+}
+
+body.dark-mode .faq summary::after {
+  color: var(--accent-color, #7aa8ff);
+}
+
+body.dark-mode .faq details[open] {
+  background: #22262d;
+}
+  */

@@ -2,7 +2,44 @@
 @forward 'base';
 @forward 'navegacion';
 
+@use 'base/variables' as v;
 
 
 
 
+
+.hero{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+
+    &__img{
+        img{
+            border-radius: .75rem;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__text{
+        padding: 1.5rem;
+        border-radius: .75rem;
+        box-shadow: 0 4px 12px rgb(0 0 0/ 6%);
+        transition: background .3s ease;
+    }
+    &__botones{
+
+        a{
+            &:hover{
+                cursor: pointer;
+            }
+            margin: 0 1rem;
+        }
+    }
+}
+
+.contacto{
+    padding: 3rem 0;
+}

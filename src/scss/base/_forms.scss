@@ -1,33 +1,48 @@
+@use 'variables' as v;
 .formulario{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-}
-fieldset{
-    border:0;
-}
-.formulario{
-    max-width: 50%;
-    border: 1px solid gray;
-    label{
-        color: black;
-        width: 100%;
-        font-size: 14px;
-        
+    margin-top: 1.5rem;
+    padding: 2rem;
+
+    background: v.$color_contraste;
+    border-radius: v.$borde-radio;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+    transition: background .3s ease;
+
+    fieldset{
+        border: none;
+        display: grid;
+        gap: 1rem;
     }
 }
- 
 
-input
+
+ body{
+
+    .modo-oscuro{
+
+        &input,textarea
+        {
+            background: #262626;
+            color: v.$color-texto;
+        }
+    }
+ }
+
+input, textarea
 {
-    height: 56px;
-    font-size: 16px;
-    border: 1px solid black;
-
+    height: 5.6rem;
     width: 100%;
-    background: white;
+    border: 1px solid transparent;
+    background: #fff;
+    border-radius: v.$borde-radio;
+    outline: none;
+    transition: border v.$transicion1, background v.$transicion1;
+
+
+    color: black;
+    font-size: 1.6rem;
+    
+
     &:focus{
        border-color: #ff5757;
     }
@@ -50,15 +65,25 @@ input
     
 }
 
+label{
+    color: black;
+}
 
-
-.btn-consulta{
+.btn-primario{
     background: #6bb5ff;
     border: none;
-    transition: background 0.4s ease;
+
+    padding: .9rem;
+
+    border-radius: v.$borde-radio;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background v.$transicion1, transform v.$transicion1;
     &:hover{
         
         background: #52a8ff;
+        transform: translateY(-2px);
     }
 }
 
