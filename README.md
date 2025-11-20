@@ -2,4 +2,4 @@
 
 <p>Proyecto de página para informar y reportar equipaje perdido en la aerolínea.</p>
 
-<a href="perdi-my-equipaje.netlify.app">Vista previa</a>
+<a href="https://perdi-my-equipaje.netlify.app">Vista previa</a>
